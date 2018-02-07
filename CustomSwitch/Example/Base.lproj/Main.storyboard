@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CustomSwitch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="puf-Vg-Ghq">
+                                <rect key="frame" x="107" y="185.5" width="160" height="296"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LGE-lo-RZQ" customClass="CustomSwitch" customModule="CustomSwitch" customModuleProvider="target">
+                                        <rect key="frame" x="56" y="0.0" width="48" height="24"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="48" id="GzS-QR-NVt"/>
+                                            <constraint firstAttribute="height" constant="24" id="Wo2-kR-aeg"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bmb-Ul-5Ya" customClass="CustomSwitch" customModule="CustomSwitch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="40" width="160" height="24"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="B3w-Mt-8il"/>
+                                            <constraint firstAttribute="width" constant="160" id="rve-cj-KAN"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="switchVauleDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="6cK-ly-kx9"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MeD-QD-md2" customClass="CustomSwitch" customModule="CustomSwitch" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="80" width="60" height="24"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="aME-oy-SuL"/>
+                                            <constraint firstAttribute="height" constant="24" id="axt-KT-ekT"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qhq-XX-yiA" customClass="CustomSwitch" customModule="CustomSwitch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="120" width="160" height="80"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="dAT-Su-G7k"/>
+                                            <constraint firstAttribute="width" constant="160" id="yOg-uy-kfu"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RZ4-tN-0yQ" customClass="CustomSwitch" customModule="CustomSwitch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="216" width="160" height="80"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="8Hv-sc-1SN"/>
+                                            <constraint firstAttribute="width" constant="160" id="QgC-DJ-io5"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="puf-Vg-Ghq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iX1-dj-nzm"/>
+                            <constraint firstItem="puf-Vg-Ghq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="urh-gg-Dgz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outletCollection property="customSwitches" destination="LGE-lo-RZQ" collectionClass="NSMutableArray" id="c6C-mj-dnx"/>
+                        <outletCollection property="customSwitches" destination="bmb-Ul-5Ya" collectionClass="NSMutableArray" id="TyW-kw-zre"/>
+                        <outletCollection property="customSwitches" destination="MeD-QD-md2" collectionClass="NSMutableArray" id="s67-V6-AQu"/>
+                        <outletCollection property="customSwitches" destination="Qhq-XX-yiA" collectionClass="NSMutableArray" id="aZw-pY-z2V"/>
+                        <outletCollection property="customSwitches" destination="RZ4-tN-0yQ" collectionClass="NSMutableArray" id="ML9-6k-5dy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-148" y="131"/>
+        </scene>
+        <!--Switch View Controller-->
+        <scene sceneID="hsI-MX-W3A">
+            <objects>
+                <viewController id="Lgm-fH-XpV" customClass="SwitchViewController" customModule="CustomSwitch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ubD-O2-JcO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Dra-3G-nLi">
+                                <rect key="frame" x="67.5" y="203.5" width="240" height="260"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p8Y-et-f4h" customClass="CustomSwitch" customModule="CustomSwitch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="120"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="Yco-gM-GUX"/>
+                                            <constraint firstAttribute="height" constant="120" id="ahB-do-dNw"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ikr-Vd-yFW" customClass="CustomSwitch" customModule="CustomSwitch" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="140" width="240" height="120"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="EeR-eg-ytI"/>
+                                            <constraint firstAttribute="height" constant="120" id="XAJ-kO-wPs"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Dra-3G-nLi" firstAttribute="centerX" secondItem="ubD-O2-JcO" secondAttribute="centerX" id="DGE-2y-uiX"/>
+                            <constraint firstItem="Dra-3G-nLi" firstAttribute="centerY" secondItem="ubD-O2-JcO" secondAttribute="centerY" id="aBZ-x6-OxM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BRS-Y3-qDY"/>
+                    </view>
+                    <connections>
+                        <outlet property="bottoSwitch" destination="Ikr-Vd-yFW" id="Xc7-wh-w8Z"/>
+                        <outlet property="switchStackView" destination="Dra-3G-nLi" id="yiv-kR-v3b"/>
+                        <outlet property="topSwitch" destination="p8Y-et-f4h" id="pDc-Ix-BGH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Swz-9A-2ou" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-148" y="822"/>
+        </scene>
+    </scenes>
+</document>
