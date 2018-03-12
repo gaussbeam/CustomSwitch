@@ -31,7 +31,8 @@ class ViewController: UIViewController {
         self.customSwitches[1].offTintColor = .clear
         self.customSwitches[1].animationDuration = 2.0
         self.customSwitches[1].labelDisplayMode = .none
-
+        self.customSwitches[1].backgroundAnimationtype = .scale
+        
         self.customSwitches[3].labelDisplayMode = .required(needsAnimating: false)
         self.customSwitches[3].onLabelText = "オン"
         self.customSwitches[3].offLabelText = "オフ"
@@ -41,6 +42,7 @@ class ViewController: UIViewController {
         self.customSwitches[3].labelPaddingX = 16.0
         self.customSwitches[3].cornerRadiusScale = 0.2
         self.customSwitches[3].thumPadding = 8.0
+        self.customSwitches[3].backgroundAnimationtype = .scale
 
         self.customSwitches[4].onLabelFont = .systemFont(ofSize: 24.0)
         self.customSwitches[4].offLabelFont = .systemFont(ofSize: 24.0)

@@ -15,6 +15,11 @@ public class CustomSwitch: UIControl {
         case required(needsAnimating: Bool)
     }
     
+    enum BackgroundAnimationType {
+        case dissolve
+        case scale
+    }
+    
     var isOn: Bool = true
     var isAnimating: Bool = false
     
@@ -49,6 +54,8 @@ public class CustomSwitch: UIControl {
     var thumShadowOppacity: Float = 0.4
     
     var labelDisplayMode: LabelDisplayMode = .required(needsAnimating: true)
+    var backgroundAnimationtype: BackgroundAnimationType = .dissolve
+    
     fileprivate var needsLabelAnimating: Bool {
         switch self.labelDisplayMode {
         case .required(let needsAnimating):
@@ -143,6 +150,28 @@ private extension CustomSwitch {
     
     func animate(completion: @escaping (() -> Void)) {
         
+        let scalingView: UIView?
+        switch self.backgroundAnimationtype {
+        case .dissolve:
+            scalingView = nil
+            
+        case .scale:
+            let length = self.isOn ? self.frame.width * 2.0 : CGFloat(0.0)
+            let size = CGSize(width: length, height: length)
+            let view = UIView(frame: CGRect(origin: .zero, size: size))
+            
+            view.clipsToBounds = true
+            view.layer.cornerRadius = length / 2.0
+            
+            view.backgroundColor = self.onTintColor
+            view.center = self.thumbView.center
+            self.frameView.addSubview(view)
+            
+            self.frameView.backgroundColor = self.offTintColor
+
+            scalingView = view
+        }
+        
         self.isOn = !self.isOn
         
         self.isAnimating = true
@@ -156,7 +185,18 @@ private extension CustomSwitch {
             animations: {
                 self.thumbView.frame.origin = self.isOn ? self.onPoint : self.offPoint
                 self.thumbView.backgroundColor = self.isOn ? self.thumOnColor : self.thumOffColor
-                self.frameView.backgroundColor = self.isOn ? self.onTintColor : self.offTintColor
+                
+                switch self.backgroundAnimationtype {
+                case .dissolve:
+                    self.frameView.backgroundColor = self.isOn ? self.onTintColor : self.offTintColor
+                    
+                case .scale:
+                    let length = self.isOn ? self.frame.width * 2.0 : CGFloat(0.0)
+                    scalingView?.frame.size.width = length
+                    scalingView?.frame.size.height = length
+                    scalingView?.layer.cornerRadius = length / 2.0
+                    scalingView?.center = self.thumbView.center
+                }
                 
                 switch self.labelDisplayMode {
                 case .required(let needsAnimating):
@@ -171,6 +211,9 @@ private extension CustomSwitch {
                 }
             },
             completion: { _ in
+                scalingView?.removeFromSuperview()
+                self.frameView.backgroundColor = self.isOn ? self.onTintColor : self.offTintColor
+
                 self.isAnimating = false
                 completion()
         })
