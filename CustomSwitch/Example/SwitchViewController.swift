@@ -39,6 +39,7 @@ class SwitchViewController: UIViewController {
         self.bottoSwitch.thumPadding = 16.0
         self.bottoSwitch.thumShadowColor = .clear
         self.bottoSwitch.labelDisplayMode = .none
+        self.bottoSwitch.isOn = false
         self.bottoSwitch.configure()
     }
 }

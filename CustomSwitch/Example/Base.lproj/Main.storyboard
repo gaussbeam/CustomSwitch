@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aHI-CO-Trt">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CustomSwitch" customModuleProvider="target" sceneMemberID="viewController">
@@ -74,6 +74,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="lqy-Yp-Pzs"/>
                     <connections>
                         <outletCollection property="customSwitches" destination="LGE-lo-RZQ" collectionClass="NSMutableArray" id="c6C-mj-dnx"/>
                         <outletCollection property="customSwitches" destination="bmb-Ul-5Ya" collectionClass="NSMutableArray" id="TyW-kw-zre"/>
@@ -86,7 +87,7 @@
             </objects>
             <point key="canvasLocation" x="-148" y="131"/>
         </scene>
-        <!--Switch View Controller-->
+        <!--Item-->
         <scene sceneID="hsI-MX-W3A">
             <objects>
                 <viewController id="Lgm-fH-XpV" customClass="SwitchViewController" customModule="CustomSwitch" customModuleProvider="target" sceneMemberID="viewController">
@@ -122,6 +123,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BRS-Y3-qDY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="aJf-Dw-dON"/>
                     <connections>
                         <outlet property="bottoSwitch" destination="Ikr-Vd-yFW" id="Xc7-wh-w8Z"/>
                         <outlet property="switchStackView" destination="Dra-3G-nLi" id="yiv-kR-v3b"/>
@@ -131,6 +133,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Swz-9A-2ou" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-148" y="822"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="NPC-RV-kOS">
+            <objects>
+                <tabBarController id="aHI-CO-Trt" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Y5a-CA-Vu1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Xl5-rc-dt0"/>
+                        <segue destination="Lgm-fH-XpV" kind="relationship" relationship="viewControllers" id="61d-3d-cTM"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DGc-pe-Ty2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1074" y="466"/>
         </scene>
     </scenes>
 </document>
